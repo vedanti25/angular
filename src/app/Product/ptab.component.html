@@ -1,0 +1,28 @@
+<h1>In Ptab</h1>
+<div>
+    <table border="2" id="tclass">
+      <tr>
+          <th>ProductId</th>
+          <th>ProductName</th>
+          <th>Price</th>
+    
+      </tr>
+      <tr *ngFor="let p of parr">
+          <td>{{p.pid}}</td>
+          <td>{{p.pname}}</td>
+          <td>{{p.price}}</td>
+          <td><a (click)="deleteProduct(p)">Delete</a>/
+              <a (click)="updateProduct(p)">Edit</a>
+          </td>
+
+      </tr>
+     
+    </table><br>
+    <button type="button" name="btn" (click)="DisplayForm()">DisplayForm</button>
+</div>
+<br>
+<div *ngIf="flag">
+    <pform [upprod]="pob" (myevent)="flag=$event"></pform>
+</div>
+<hr>
+<plist></plist>
